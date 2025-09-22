@@ -1,0 +1,81 @@
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
+header {
+    width: 100%;
+    padding: 10px 0; /* Reducido el padding para hacerlo más pequeño */
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Reducido el padding lateral */
+}
+
+.logo img {
+    height: 32px; /* Más pequeño el logo */
+    margin-left: -35px; /* Mueve más a la izquierda */
+}
+
+.header-links {
+    display: flex;
+    gap: 30px;
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+body {
+    margin-top: 60px; /* Ajusta este valor según la nueva altura del header */
+    background-image: url('fondo index.jpg'); /* Cambia 'fondo.jpg' por el nombre de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.center-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(50vh - 60px); /* Menos altura para subir el título */
+    margin-top: 20px;           /* Margen superior opcional */
+    margin-bottom: 0;
+    font-family: 'Montserrat', Arial, sans-serif; /* Aplica Montserrat */
+    font-weight: 700;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 48px;        
+    height: 48px;        
+    bottom: 30px;        /* Un poco más arriba */
+    right: 30px;         /* Un poco más a la izquierda */
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;       /* Centra el contenido */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    padding: 0;          /* Sin relleno extra */
+}
+
+.whatsapp-float img {
+    width: 28px;         /* Ajusta el tamaño del logo */
+    height: 28px;
+    display: block;
+}
