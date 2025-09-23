@@ -1,0 +1,4 @@
+Buen Avance, recuerde el responsive, para poder ir revisando como se ve el diseño responsive
+ se mete a google apreta f12 toca el simbolo
+ de telefono que le va a salir en un menu arriba pequeño y ahi lo va a ver
+ Tambien intente usar un menu estilo hamburguer para el responsive
