@@ -43,72 +43,40 @@
         </nav>
     </header>
 
-    <!-- Hero Section con Slider Mejorado -->
+    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-slider">
-            <div class="slide active" data-bg="fondo index.jpg">
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
+        <div class="hero-container">
+            <div class="hero-background">
+                <img src="fondo index.jpg" alt="Café Grano Dorado" class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-text">
                     <h1 class="hero-title">Grano Dorado</h1>
                     <p class="hero-subtitle">El auténtico sabor del café costarricense</p>
-                    <div class="hero-buttons">
-                        <a href="#menu" class="btn-hero primary enhanced">
-                            <span class="btn-text">Prueba Nuestro Café</span>
-                            <span class="btn-icon">☕</span>
-                        </a>
-                        <a href="ubicacion.html" class="btn-hero secondary enhanced">
-                            <span class="btn-text">Visítanos Ahora</span>
-                            <span class="btn-icon">📍</span>
-                        </a>
-                    </div>
+                    <p class="hero-description">Descubre nuestras dos especialidades únicas: café tradicional premium y café con chocolate artesanal</p>
                 </div>
-            </div>
-            
-            <div class="slide" data-bg="fondo index.jpg">
-                <div class="slide-overlay overlay-dark"></div>
-                <div class="slide-content">
-                    <h1 class="hero-title">Café Premium</h1>
-                    <p class="hero-subtitle">Dos especialidades únicas: tradicional y con chocolate</p>
-                    <div class="hero-buttons">
-                        <a href="#menu" class="btn-hero primary enhanced">
-                            <span class="btn-text">Ver Especialidades</span>
-                            <span class="btn-icon">🍫</span>
-                        </a>
-                        <a href="quienes somos.html" class="btn-hero secondary enhanced">
-                            <span class="btn-text">Nuestra Historia</span>
-                            <span class="btn-icon">→</span>
-                        </a>
-                    </div>
+                
+                <div class="hero-main-buttons">
+                    <a href="#menu" class="btn-main ver-carta">
+                        <span class="btn-icon">📋</span>
+                        <span class="btn-text">Ver Carta</span>
+                    </a>
+                    <a href="https://wa.me/50687104694?text=Hola, me gustaría hacer un pedido" class="btn-main hacer-pedido" target="_blank">
+                        <span class="btn-icon">📱</span>
+                        <span class="btn-text">Hacer Pedido</span>
+                    </a>
                 </div>
-            </div>
-            
-            <div class="slide" data-bg="fondo index.jpg">
-                <div class="slide-overlay overlay-gold"></div>
-                <div class="slide-content">
-                    <h1 class="hero-title">Tradición Costarricense</h1>
-                    <p class="hero-subtitle">Desde 2023 sirviendo la mejor experiencia cafetera</p>
-                    <div class="hero-buttons">
-                        <a href="https://wa.me/50687104694" class="btn-hero primary enhanced" target="_blank">
-                            <span class="btn-text">Ordena por WhatsApp</span>
-                            <span class="btn-icon">💬</span>
-                        </a>
-                        <a href="historia.html" class="btn-hero secondary enhanced">
-                            <span class="btn-text">Conoce Más</span>
-                            <span class="btn-icon">📖</span>
-                        </a>
-                    </div>
+                
+                <div class="hero-secondary-actions">
+                    <a href="ubicacion.html" class="btn-secondary">
+                        <span>📍 Visítanos</span>
+                    </a>
+                    <a href="quienes somos.html" class="btn-secondary">
+                        <span>👥 Conócenos</span>
+                    </a>
                 </div>
-            </div>
-            
-            <!-- Controles del Slider -->
-            <div class="slider-controls">
-                <button class="slider-btn prev" aria-label="Slide anterior">‹</button>
-                <div class="slider-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
-                    <button class="dot" data-slide="2"></button>
-                </div>
-                <button class="slider-btn next" aria-label="Slide siguiente">›</button>
             </div>
         </div>
         
@@ -346,7 +314,7 @@
     </a>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle y funcionalidades
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const mobileNav = document.querySelector('.mobile-nav');
@@ -397,6 +365,42 @@
                     mobileNav.classList.remove('active');
                     document.body.classList.remove('menu-open');
                 }
+            });
+            
+            // Smooth scroll para "Ver Carta"
+            document.querySelectorAll('a[href="#menu"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const menuSection = document.getElementById('menu');
+                    if (menuSection) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = menuSection.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Animación de botones de tamaño de café
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remover active de otros botones en el mismo grupo
+                    const parent = this.closest('.coffee-item');
+                    parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                    
+                    // Activar este botón
+                    this.classList.add('active');
+                    
+                    // Actualizar precio
+                    const price = this.dataset.price;
+                    const priceElement = parent.querySelector('.price');
+                    if (priceElement && price) {
+                        priceElement.textContent = `₡${price}`;
+                    }
+                });
             });
         });
     </script>
