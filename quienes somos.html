@@ -1,27 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiénes somos</title>
+    <title>Quiénes Somos - Grano Dorado</title>
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
 </head>
-<body id="quienes-somos-body">
-    <h1 class="center-title">Quiénes Somos</h1>
-    <header>
-        <div class="header-content">
+
+<body class="page-container">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
             <div class="logo">
                 <img src="logo header.jpg" alt="Logo Grano Dorado">
+                <span class="logo-text">Grano Dorado</span>
             </div>
-            <div class="header-links">
-                <a href="index.html">Inicio</a>
-                <a href="historia.html">Historia</a>
-                <a href="ubicacion.html">Ubicación</a>
-            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="quienes somos.html" class="nav-link active">Quiénes somos</a>
+                <a href="historia.html" class="nav-link">Historia</a>
+                <a href="ubicacion.html" class="nav-link">Ubicación</a>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menú">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link">Inicio</a>
+            <a href="quienes somos.html" class="mobile-nav-link active">Quiénes somos</a>
+            <a href="historia.html" class="mobile-nav-link">Historia</a>
+            <a href="ubicacion.html" class="mobile-nav-link">Ubicación</a>
+        </nav>
     </header>
 
-</body>
+    <main class="main-content">
+        <!-- Hero Section Minimalista -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Quiénes Somos</h1>
+                    <p class="hero-subtitle">La experiencia cafetera más auténtica de Costa Rica</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Mission Statement - Minimalista -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="content-wrapper">
+                    <div class="text-content">
+                        <h2 class="section-title">Nuestra Esencia</h2>
+                        <p class="lead-text">Somos Grano Dorado, una cafetería artesanal que nació de la pasión por el café excepcional. Creemos que cada taza cuenta una historia única.</p>
+                        <p>Ofrecemos dos especialidades únicas: nuestro café Grano Dorado premium y nuestra exclusiva mezcla de café con chocolate artesanal, trabajando directamente con productores costarricenses para garantizar calidad excepcional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Grid Minimalista -->
+        <section class="values-section">
+            <div class="container">
+                <h2 class="section-title centered">Nuestros Pilares</h2>
+                <div class="values-grid-minimal">
+                    <div class="value-card">
+                        <div class="value-icon">01</div>
+                        <h3>Calidad</h3>
+                        <p>Selección rigurosa de granos premium para una experiencia excepcional.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">02</div>
+                        <h3>Tradición</h3>
+                        <p>Respeto por los métodos artesanales y la cultura cafetera costarricense.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">03</div>
+                        <h3>Sostenibilidad</h3>
+                        <p>Compromiso con prácticas responsables que cuidan nuestro entorno.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">04</div>
+                        <h3>Comunidad</h3>
+                        <p>Relaciones genuinas con productores, equipo y cada cliente que nos visita.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Story Section -->
+        <section class="founder-section">
+            <div class="container">
+                <div class="founder-content">
+                    <div class="founder-image">
+                        <div class="founder-photo">
+                            <div class="photo-placeholder">
+                                <span class="initial">C</span>
+                            </div>
+                        </div>
+                        <div class="founder-quote">
+                            "Cada taza cuenta una historia"
+                        </div>
+                    </div>
+                    <div class="founder-story">
+                        <h2 class="section-title">Carlos Morales</h2>
+                        <span class="founder-role">Fundador & Master Barista</span>
+                        <p class="founder-bio">
+                            Con más de una década de experiencia en la industria cafetera, Carlos fundó Grano Dorado en 2023 con la visión de crear un espacio donde cada cliente pudiera experimentar la verdadera esencia del café costarricense.
+                        </p>
+                        <div class="founder-timeline">
+                            <div class="timeline-item">
+                                <span class="year">2010</span>
+                                <span class="achievement">Certificación Q Grader</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">2015</span>
+                                <span class="achievement">Especialización en Tostado</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">2023</span>
+                                <span class="achievement">Fundación Grano Dorado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section Mejorada -->
+        <section class="team-section">
+            <div class="container">
+                <div class="team-header">
+                    <h2 class="section-title">Nuestro Equipo</h2>
+                    <p>Profesionales certificados dedicados a la excelencia cafetera</p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <div class="photo-placeholder">
+                                <span class="initial">A</span>
+                            </div>
+                        </div>
+                        <h3>Ana Rodríguez</h3>
+                        <span class="member-role">Barista Senior</span>
+                        <div class="member-certifications">
+                            <span class="cert">SCA Certified</span>
+                            <span class="cert">Latte Art</span>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <div class="photo-placeholder">
+                                <span class="initial">M</span>
+                            </div>
+                        </div>
+                        <h3>Miguel Chen</h3>
+                        <span class="member-role">Tostador Artesanal</span>
+                        <div class="member-certifications">
+                            <span class="cert">Roasting Expert</span>
+                            <span class="cert">Quality Control</span>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <div class="photo-placeholder">
+                                <span class="initial">L</span>
+                            </div>
+                        </div>
+                        <h3>Lucía Vargas</h3>
+                        <span class="member-role">Especialista en Servicio</span>
+                        <div class="member-certifications">
+                            <span class="cert">Customer Experience</span>
+                            <span class="cert">Sensory Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="certifications-banner">
+                    <h3>Nuestras Certificaciones</h3>
+                    <div class="cert-logos">
+                        <div class="cert-item">
+                            <div class="cert-logo">SCA</div>
+                            <span>Specialty Coffee Association</span>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-logo">QG</div>
+                            <span>Q Grader Certified</span>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-logo">ICO</div>
+                            <span>International Coffee Organization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo header.jpg" alt="Logo Grano Dorado">
+                        <h3>Grano Dorado</h3>
+                        <p>El auténtico sabor del café costarricense</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes somos.html">Quiénes Somos</a></li>
+                        <li><a href="historia.html">Historia</a></li>
+                        <li><a href="ubicacion.html">Ubicación</a></li>
+                    </ul>
+                </div>
+              
+                
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/granodoradocr" target="_blank" rel="noopener" class="social-link facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/granodorado.cafe" target="_blank" rel="noopener" class="social-link instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/50687104694" target="_blank" rel="noopener" class="social-link whatsapp">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Grano Dorado. Todos los derechos reservados.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Términos y Condiciones</a>
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/50687104694" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const header = document.querySelector('.main-header');
+            
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            });
+            
+            // Header scroll effect
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', function() {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Hide header when scrolling down, show when scrolling up
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.main-header') && mobileNav.classList.contains('active')) {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+</body>
 </html>

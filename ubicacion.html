@@ -1,25 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Ubicación</title>
+    <title>Ubicación - Grano Dorado</title>
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
 </head>
-<body id="ubicacion-body">
-    <h1 class="center-title">Nuestra Ubicación</h1>
-    <header>
-        <div class="header-content">
+
+<body class="page-container">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
             <div class="logo">
                 <img src="logo header.jpg" alt="Logo Grano Dorado">
+                <span class="logo-text">Grano Dorado</span>
             </div>
-            <div class="header-links">
-                <a href="index.html">Inicio</a>
-                <a href="quienes somos.html">Quiénes somos</a>
-                <a href="historia.html">Historia</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="quienes somos.html" class="nav-link">Quiénes somos</a>
+                <a href="historia.html" class="nav-link">Historia</a>
+                <a href="ubicacion.html" class="nav-link active">Ubicación</a>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menú">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link">Inicio</a>
+            <a href="quienes somos.html" class="mobile-nav-link">Quiénes somos</a>
+            <a href="historia.html" class="mobile-nav-link">Historia</a>
+            <a href="ubicacion.html" class="mobile-nav-link active">Ubicación</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Location Hero Section -->
+        <section class="location-hero">
+            <div class="hero-background"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Ubicación</h1>
+                    <p class="hero-subtitle">Encuentranos en el corazón de San José</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Info Section -->
+        <section class="location-info-section">
+            <div class="container">
+                <div class="location-content">
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-header">
+                                <h3>Dirección</h3>
+                            </div>
+                            <div class="info-details">
+                                <p>Avenida Central, San José</p>
+                                <p>Costa Rica</p>
+                                <p>Frente al Parque Central</p>
+                                <p>Edificio Dorado, Local 12</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-header">
+                                <h3>Horarios</h3>
+                            </div>
+                            <div class="info-details">
+                                <div class="schedule-item">
+                                    <span class="day">Lunes - Viernes</span>
+                                    <span class="time">6:00 AM - 8:00 PM</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Sábados</span>
+                                    <span class="time">7:00 AM - 9:00 PM</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Domingos</span>
+                                    <span class="time">8:00 AM - 6:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-header">
+                                <h3>Contacto</h3>
+                            </div>
+                            <div class="info-details">
+                                <div class="contact-item">
+                                    <span class="label">Teléfono</span>
+                                    <span class="value">+506 8710-4694</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="label">Email</span>
+                                    <span class="value">info@granodorado.cr</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="label">WhatsApp</span>
+                                    <span class="value">+506 8710-4694</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section Mejorada -->
+        <section class="map-section">
+            <div class="container">
+                <div class="map-wrapper">
+                    <div class="map-header">
+                        <h2>Cómo Llegar</h2>
+                        <p>Te esperamos en una ubicación de fácil acceso</p>
+                        <div class="live-status">
+                            <div class="status-indicator">
+                                <span class="status-dot open"></span>
+                                <span class="status-text">Abierto ahora</span>
+                            </div>
+                            <div class="occupancy-level">
+                                <span class="occupancy-label">Ocupación:</span>
+                                <div class="occupancy-bar">
+                                    <div class="occupancy-fill moderate" style="width: 60%"></div>
+                                </div>
+                                <span class="occupancy-text">Moderada</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-tabs">
+                        <button class="map-tab active" data-map="satellite">Vista Satelital</button>
+                        <button class="map-tab" data-map="street">Street View</button>
+                        <button class="map-tab" data-map="parking">Estacionamiento</button>
+                    </div>
+                    
+                    <div class="map-container">
+                        <!-- Vista Satelital -->
+                        <div class="map-view active" id="satellite-view">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15720.482277814943!2d-84.09080633822545!3d9.934739050434867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50d15c5%3A0x6c1b82f5ca9d5e4d!2sSan%20Jos%C3%A9%2C%20Costa%20Rica!5e1!3m2!1ses!2scr!4v1695574800000!5m2!1ses!2scr" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Vista satelital de Grano Dorado">
+                            </iframe>
+                        </div>
+                        
+                        <!-- Street View -->
+                        <div class="map-view" id="street-view">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!4v1695574800000!6m8!1m7!1sCAoSLEFGMVFpcE1OX1FhemNzdzREUmFlLUdBTl9JWlN5b09wc2FnUVp2VjR6aF9L!2m2!1d9.934739!2d-84.090806!3f0!4f0!5f0.7820865974627469" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Street view de la ubicación">
+                            </iframe>
+                        </div>
+                        
+                        <!-- Vista de Estacionamiento -->
+                        <div class="map-view" id="parking-view">
+                            <div class="parking-info">
+                                <h3>Opciones de Estacionamiento</h3>
+                                <div class="parking-grid">
+                                    <div class="parking-option">
+                                        <div class="parking-icon">P1</div>
+                                        <h4>Parqueo Principal</h4>
+                                        <p>Edificio Dorado - Nivel B1</p>
+                                        <span class="price">₡500/hora</span>
+                                        <span class="availability available">Disponible</span>
+                                    </div>
+                                    <div class="parking-option">
+                                        <div class="parking-icon">P2</div>
+                                        <h4>Parqueo Público</h4>
+                                        <p>Parque Central - 50m</p>
+                                        <span class="price">₡300/hora</span>
+                                        <span class="availability limited">Limitado</span>
+                                    </div>
+                                    <div class="parking-option">
+                                        <div class="parking-icon">M</div>
+                                        <h4>Parquímetros</h4>
+                                        <p>Avenida Central</p>
+                                        <span class="price">₡200/hora</span>
+                                        <span class="availability full">Completo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-actions">
+                        <a href="https://www.google.com/maps/place/San+José,+Costa+Rica" target="_blank" class="btn-action primary">
+                            Ver en Google Maps
+                        </a>
+                        <a href="https://www.google.com/maps/dir//San+José,+Costa+Rica" target="_blank" class="btn-action secondary">
+                            Obtener Direcciones
+                        </a>
+                        <a href="https://wa.me/50687104694?text=Hola, me gustaría información sobre Grano Dorado" target="_blank" class="btn-action accent">
+                            Contactar WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transport Options Section -->
+        <section class="transport-section">
+            <div class="transport-background"></div>
+            <div class="container">
+                <div class="transport-content">
+                    <h2>Opciones de Transporte</h2>
+                    <p>Múltiples formas de llegar a nuestro establecimiento</p>
+                    <div class="transport-grid">
+                        <div class="transport-card">
+                            <div class="transport-icon">CAR</div>
+                            <h3>Automóvil</h3>
+                            <p>Estacionamiento disponible en las cercanías</p>
+                        </div>
+                        <div class="transport-card">
+                            <div class="transport-icon">BUS</div>
+                            <h3>Transporte Público</h3>
+                            <p>Múltiples rutas de autobús disponibles</p>
+                        </div>
+                        <div class="transport-card">
+                            <div class="transport-icon">WALK</div>
+                            <h3>A Pie</h3>
+                            <p>Ubicación céntrica de fácil acceso peatonal</p>
+                        </div>
+                        <div class="transport-card">
+                            <div class="transport-icon">DEL</div>
+                            <h3>Delivery</h3>
+                            <p>Servicio de entrega a domicilio disponible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo header.jpg" alt="Logo Grano Dorado">
+                        <h3>Grano Dorado</h3>
+                        <p>El auténtico sabor del café costarricense</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes somos.html">Quiénes Somos</a></li>
+                        <li><a href="historia.html">Historia</a></li>
+                        <li><a href="ubicacion.html">Ubicación</a></li>
+                    </ul>
+                </div>
+                
+              
+                
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/granodoradocr" target="_blank" rel="noopener" class="social-link facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/granodorado.cafe" target="_blank" rel="noopener" class="social-link instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/50687104694" target="_blank" rel="noopener" class="social-link whatsapp">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Grano Dorado. Todos los derechos reservados.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Términos y Condiciones</a>
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
+    </footer>
+
+    <a href="https://wa.me/50687104694" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const header = document.querySelector('.main-header');
+            
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            });
+            
+            // Header scroll effect
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', function() {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Hide header when scrolling down, show when scrolling up
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.main-header') && mobileNav.classList.contains('active')) {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
