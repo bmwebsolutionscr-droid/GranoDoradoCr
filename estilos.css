@@ -140,6 +140,260 @@ section {
     font-weight: 600;
 }
 
+/* Header Menu Button */
+.header-menu-btn {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.header-menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #FFA500, #FFD700);
+}
+
+.header-menu-btn:active {
+    transform: translateY(0);
+}
+
+.header-menu-btn .btn-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.header-menu-btn:hover .btn-icon {
+    transform: rotate(20deg);
+}
+
+/* ========================================
+   MENU OVERLAY - HEADER MODULE
+   ======================================== */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(20, 20, 20, 0.95) 50%, 
+        rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
+}
+
+.menu-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    width: 95%;
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transform: translateY(-50px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-overlay.active .menu-container {
+    transform: translateY(0);
+}
+
+.menu-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 30px 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-title-section {
+    flex: 1;
+}
+
+.menu-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.menu-title-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    letter-spacing: -1px;
+}
+
+.menu-title-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.close-overlay-btn {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E88);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.close-overlay-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.coffee-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Scrollbar personalizado para el overlay */
+.coffee-menu-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.coffee-menu-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.coffee-menu-grid::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 4px;
+}
+
+.coffee-menu-grid::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #FFA500, #FFD700);
+}
+
+/* Responsive para el overlay */
+@media (max-width: 1024px) {
+    .coffee-menu-grid {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+    
+    .menu-container {
+        margin: 60px auto 30px;
+        width: 98%;
+    }
+    
+    .menu-header {
+        padding: 25px 30px;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .menu-title-section h2 {
+        font-size: 2rem;
+    }
+    
+    .close-overlay-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        margin: 40px auto 20px;
+        border-radius: 15px;
+    }
+    
+    .menu-header {
+        padding: 20px 25px;
+    }
+    
+    .menu-title-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .menu-title-section p {
+        font-size: 1rem;
+    }
+    
+    .coffee-menu-grid {
+        padding: 25px;
+        gap: 25px;
+        max-height: 65vh;
+    }
+    
+    .close-overlay-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        top: 15px;
+        right: 15px;
+    }
+}
+
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
@@ -467,7 +721,7 @@ body {
 }
 
 .hero-text {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .hero-title {
@@ -499,10 +753,10 @@ body {
 /* Botones Principales del Hero */
 .hero-main-buttons {
     display: flex;
-    gap: 25px;
+    gap: 16px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     animation: fadeInUp 1s ease-out 0.4s both;
     flex-wrap: wrap;
 }
@@ -511,70 +765,73 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 18px 35px;
-    font-size: 1.2rem;
-    font-weight: 600;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
     text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 4px;
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 2px solid transparent;
-    min-width: 200px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-transform: none;
+    letter-spacing: 0.2px;
+    border: 1px solid transparent;
+    min-width: 140px;
+    box-shadow: none;
+    backdrop-filter: blur(10px);
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
 }
 
 .btn-main::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.6s;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .btn-main:hover::before {
-    left: 100%;
+    opacity: 1;
 }
 
 .btn-main.ver-carta {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
+    background: rgba(255, 215, 0, 0.9);
     color: #000000;
-    border-color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
 }
 
 .btn-main.ver-carta:hover {
-    background: linear-gradient(135deg, #FFA500, #FFD700);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+    background: rgba(255, 215, 0, 1);
+    transform: translateY(-1px);
+    border-color: rgba(255, 215, 0, 0.8);
 }
 
 .btn-main.hacer-pedido {
-    background: linear-gradient(135deg, #000000, #333333);
+    background: rgba(0, 0, 0, 0.8);
     color: #FFFFFF;
-    border-color: #FFD700;
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-main.hacer-pedido:hover {
-    background: linear-gradient(135deg, #333333, #000000);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    border-color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.95);
+    transform: translateY(-1px);
+    border-color: rgba(255, 215, 0, 0.4);
 }
 
 .btn-main .btn-icon {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* Botones Secundarios del Hero */
 .hero-secondary-actions {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     justify-content: center;
     align-items: center;
     animation: fadeInUp 1s ease-out 0.6s both;
@@ -585,23 +842,23 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: 500;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 400;
     text-decoration: none;
-    color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    letter-spacing: 0.2px;
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 215, 0, 0.2);
-    border-color: rgba(255, 215, 0, 0.4);
-    transform: translateY(-2px);
-    color: #FFD700;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 215, 0, 0.3);
+    color: rgba(255, 215, 0, 0.9);
 }
 
 .btn-hero {
@@ -696,16 +953,18 @@ body {
 }
 
 .coffee-background-section {
-    min-height: 60vh;
+    min-height: 70vh;
     background: linear-gradient(rgba(139,69,19,0.8), rgba(101,67,33,0.9)), url('fondo index.jpg');
     background-size: cover;
-    background-position: center bottom;
-    background-attachment: fixed;
+    background-position: center;
+    background-attachment: scroll;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     color: white;
     text-align: center;
+    padding: 80px 0;
 }
 
 .section-overlay {
@@ -720,20 +979,32 @@ body {
 .background-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .background-content h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    text-align: center;
+    max-width: 600px;
 }
 
 .background-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 550px;
+    opacity: 0.95;
 }
 
 .location-preview {
@@ -742,19 +1013,6 @@ body {
 }
 
 /* Secciones específicas con fondos para páginas internas */
-.team-background-section {
-    min-height: 60vh;
-    background: linear-gradient(rgba(101,67,33,0.8), rgba(139,69,19,0.9)), url('fondo index.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    position: relative;
-    color: white;
-    text-align: center;
-}
-
 .heritage-background-section {
     min-height: 50vh;
     background: linear-gradient(rgba(160,82,45,0.8), rgba(139,69,19,0.9)), url('fondo index.jpg');
@@ -1285,26 +1543,26 @@ body {
     
     .hero-main-buttons {
         flex-direction: column;
-        gap: 15px;
-        margin-bottom: 25px;
+        gap: 12px;
+        margin-bottom: 20px;
         align-items: center;
     }
     
     .btn-main {
         width: 100%;
-        max-width: 280px;
-        padding: 16px 25px;
-        font-size: 1.1rem;
+        max-width: 240px;
+        padding: 14px 24px;
+        font-size: 0.95rem;
         min-width: auto;
     }
     
     .hero-secondary-actions {
-        gap: 15px;
+        gap: 12px;
     }
     
     .btn-secondary {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 8px 16px;
+        font-size: 0.8rem;
     }
 }
 
@@ -1352,23 +1610,25 @@ body {
     }
     
     .btn-main {
-        max-width: 260px;
-        padding: 15px 20px;
-        font-size: 1rem;
+        max-width: 220px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
     
     .btn-main .btn-icon {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
     }
     
     .hero-secondary-actions {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
     
     .btn-secondary {
-        width: 180px;
+        width: 160px;
         text-align: center;
+        padding: 6px 12px;
+        font-size: 0.75rem;
     }
 }
 
@@ -1456,11 +1716,26 @@ body {
     
     /* Secciones con fondo responsive */
     .coffee-background-section,
-    .team-background-section,
     .heritage-background-section,
     .arrival-background-section {
         background-attachment: scroll;
         min-height: 50vh;
+        padding: 60px 0;
+    }
+    
+    .background-content {
+        padding: 30px 15px;
+    }
+    
+    .background-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .background-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.6;
     }
     
     .hero-section {
@@ -1740,6 +2015,8 @@ body {
     text-align: center;
     margin-bottom: 60px;
     width: 100%;
+    position: relative;
+    padding: 20px;
 }
 
 .menu-header h2 {
@@ -1756,6 +2033,66 @@ body {
     margin: 0;
 }
 
+/* Botón cerrar menú */
+.close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #666666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #000000;
+}
+
+/* Animaciones del menú */
+.menu-section {
+    transition: all 0.3s ease;
+}
+
+.menu-section.show {
+    display: block !important;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.menu-section.hide {
+    animation: fadeOutDown 0.3s ease-in;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
 .coffee-menu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -1766,189 +2103,486 @@ body {
     margin: 0 auto;
 }
 
-.coffee-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    padding: 40px;
-    background: #f8f8f8;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
+/* ========================================
+   COFFEE CARDS - PREMIUM DESIGN
+   ======================================== */
 
-.coffee-item.enhanced {
-    position: relative;
+.coffee-card {
     background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.coffee-photo {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
-}
-
-.photo-overlay {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-}
-
-.popular-badge, .specialty-badge {
-    background: #FF6B6B;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.specialty-badge {
-    background: #4ECDC4;
-}
-
-.coffee-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-.price-tag {
-    text-align: right;
-}
-
-.price {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #FFD700;
-    display: block;
-}
-
-.size {
-    font-size: 0.8rem;
-    color: #666666;
-}
-
-.coffee-actions {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.size-options {
-    display: flex;
-    gap: 10px;
-}
-
-.size-btn {
-    padding: 8px 16px;
-    border: 2px solid #e0e0e0;
-    background: transparent;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.size-btn.active {
-    border-color: #FFD700;
-    background: #FFD700;
-    color: #000000;
-    font-weight: 600;
-}
-
-.btn-order {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 25px;
-    background: linear-gradient(135deg, #000000, #333333);
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 215, 0, 0.1);
     position: relative;
-    overflow: hidden;
+    will-change: transform;
+    contain: layout style paint;
 }
 
-.btn-order:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.btn-order::before {
+.coffee-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
-    transition: left 0.5s;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.btn-order:hover::before {
-    left: 100%;
+.coffee-card:hover::before {
+    opacity: 1;
 }
 
-.coffee-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+.coffee-card:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     border-color: rgba(255, 215, 0, 0.3);
-    background: #ffffff;
 }
 
-.coffee-image {
-    flex-shrink: 0;
+/* Card Header */
+.card-header {
+    padding: 25px 25px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.coffee-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.coffee-steam {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.steam {
+    width: 3px;
+    height: 20px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 2px;
+    position: absolute;
+    animation: steam 1.5s infinite ease-in-out;
+}
+
+.steam:nth-child(1) {
+    left: -8px;
+    animation-delay: 0s;
+}
+
+.steam:nth-child(2) {
+    left: 0;
+    animation-delay: 0.5s;
+}
+
+.steam:nth-child(3) {
+    left: 8px;
+    animation-delay: 1s;
 }
 
 .coffee-icon {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background: linear-gradient(135deg, #FFD700, #FFA500);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
 }
 
-.coffee-details h3 {
-    font-size: 1.5rem;
+.coffee-card:hover .coffee-icon {
+    transform: scale(1.1);
+    box-shadow: 0 16px 40px rgba(255, 215, 0, 0.4);
+}
+
+.specialty-indicator {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    z-index: 3;
+}
+
+.premium-badge {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E88);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.coffee-name {
+    text-align: center;
+}
+
+.coffee-name h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.origin-info {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Card Content */
+.card-content {
+    padding: 25px;
+}
+
+.intensity-meter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid #FFD700;
+}
+
+.intensity-label {
+    font-size: 0.85rem;
     font-weight: 600;
-    color: #000000;
-    margin: 0 0 15px 0;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 70px;
 }
 
-.coffee-details p {
+.intensity-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.intensity-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    border-radius: 3px;
+    transition: width 1s ease;
+}
+
+.intensity-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2c3e50;
+    min-width: 30px;
+}
+
+.tasting-notes {
+    margin-bottom: 20px;
+}
+
+.tasting-notes h4 {
     font-size: 1rem;
-    color: #666666;
-    line-height: 1.7;
-    margin: 0 0 20px 0;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.coffee-features {
+.notes-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.note {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: 2px solid;
+    transition: all 0.3s ease;
+}
+
+.note.chocolate {
+    color: #8B4513;
+    border-color: #8B4513;
+    background: rgba(139, 69, 19, 0.1);
+}
+
+.note.caramel {
+    color: #D2691E;
+    border-color: #D2691E;
+    background: rgba(210, 105, 30, 0.1);
+}
+
+.note.smooth {
+    color: #4682B4;
+    border-color: #4682B4;
+    background: rgba(70, 130, 180, 0.1);
+}
+
+.note.sweet {
+    color: #FF69B4;
+    border-color: #FF69B4;
+    background: rgba(255, 105, 180, 0.1);
+}
+
+.note.intense {
+    color: #8B0000;
+    border-color: #8B0000;
+    background: rgba(139, 0, 0, 0.1);
+}
+
+.note:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    font-size: 1rem;
+    color: #5a6c7d;
+    line-height: 1.7;
+    margin: 0 0 25px 0;
+    font-weight: 400;
+}
+
+.coffee-highlights {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    margin-bottom: 25px;
 }
 
-.feature {
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
     font-size: 0.9rem;
-    color: #FFD700;
     font-weight: 500;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.highlight:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.highlight-icon {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.size-selector {
+    margin-bottom: 20px;
+}
+
+.size-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.size-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.size-option {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #e9ecef;
+    background: #ffffff;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.size-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.size-option:hover::before {
+    left: 100%;
+}
+
+.size-option.active {
+    border-color: #FFD700;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.size-option:hover:not(.active) {
+    border-color: #FFD700;
+    transform: translateY(-2px);
+}
+
+.price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFD700;
+}
+
+.price-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.order-btn {
+    width: 100%;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.order-btn.premium {
+    background: linear-gradient(135deg, #000000, #2c3e50);
+}
+
+.order-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.order-btn:hover::before {
+    left: 100%;
+}
+
+.order-btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-text {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.order-btn:hover .btn-icon {
+    transform: translateX(3px);
+}
+
+/* Animations */
+@keyframes steam {
+    0%, 100% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-15px) scaleX(0.8);
+        opacity: 0.2;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Legacy support for old coffee-item class */
+.coffee-item {
+    /* Fallback for any remaining old items */
+    display: none;
 }
 
 /* Menu Responsive */
@@ -2133,60 +2767,6 @@ body {
     margin: 0;
 }
 
-/* Team Section */
-.team-section {
-    padding: 100px 0;
-    background: #000000;
-    color: #ffffff;
-}
-
-.team-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.team-section .section-title {
-    color: #FFD700;
-}
-
-.team-text p {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.8;
-    margin: 0 0 40px 0;
-}
-
-.team-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.stat {
-    text-align: center;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-}
-
-.stat-number {
-    display: block;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #FFD700;
-    margin: 0 0 10px 0;
-}
-
-.stat-label {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 /* Responsive para Quienes Somos */
 @media (max-width: 768px) {
     .about-hero {
@@ -2202,8 +2782,7 @@ body {
     }
     
     .mission-section,
-    .values-section,
-    .team-section {
+    .values-section {
         padding: 60px 0;
     }
     
@@ -2220,10 +2799,7 @@ body {
         gap: 30px;
     }
     
-    .team-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+
 }
 
 @media (max-width: 480px) {
@@ -2978,9 +3554,156 @@ body {
     }
 }
 
-/* End CSS */
+/* ========================================
+   RESPONSIVE - COFFEE CARDS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .menu-section {
+        padding: 60px 0;
+    }
     
-    .contact-info p {
+    .coffee-menu {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .coffee-card {
+        margin: 0 10px;
+    }
+    
+    .card-header {
+        padding: 20px 20px 15px;
+    }
+    
+    .coffee-visual {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+    
+    .coffee-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .coffee-name h3 {
+        font-size: 1.4rem;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .intensity-meter {
+        padding: 12px;
+    }
+    
+    .notes-tags {
+        gap: 6px;
+    }
+    
+    .note {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .coffee-highlights {
+        gap: 10px;
+    }
+    
+    .highlight {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .card-footer {
+        padding: 20px;
+    }
+    
+    .size-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .size-option {
+        padding: 10px 15px;
+    }
+    
+    .order-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .coffee-card {
+        margin: 0 5px;
+        border-radius: 15px;
+    }
+    
+    .card-header {
+        padding: 15px 15px 12px;
+    }
+    
+    .coffee-visual {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+    
+    .coffee-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .coffee-name h3 {
+        font-size: 1.2rem;
+    }
+    
+    .origin-info {
+        font-size: 0.8rem;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .coffee-highlights {
+        gap: 8px;
+    }
+    
+    .highlight {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+    
+    .highlight-icon {
+        font-size: 1rem;
+    }
+    
+    .card-footer {
+        padding: 15px;
+    }
+    
+    .current-price {
+        font-size: 1.3rem;
+    }
+    
+    .price-label {
+        font-size: 0.8rem;
+    }
+    
+    .order-btn {
+        padding: 10px 15px;
         font-size: 0.9rem;
     }
 }

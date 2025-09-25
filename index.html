@@ -24,6 +24,10 @@
                 <a href="quienes somos.html" class="nav-link">Quiénes somos</a>
                 <a href="historia.html" class="nav-link">Historia</a>
                 <a href="ubicacion.html" class="nav-link">Ubicación</a>
+                <button class="header-menu-btn" id="header-menu-toggle">
+                    <span class="btn-text">Ver Carta</span>
+                    <span class="btn-icon">☕</span>
+                </button>
             </nav>
             
             <!-- Mobile Menu Toggle -->
@@ -43,6 +47,175 @@
         </nav>
     </header>
 
+    <!-- Menu Overlay (Hidden by default) -->
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="overlay-backdrop"></div>
+        <div class="menu-container">
+            <div class="menu-header">
+                <div class="menu-title-section">
+                    <div class="menu-badge">Especialidades Premium</div>
+                    <h2>Descubre Nuestros Cafés</h2>
+                    <p>Cada taza cuenta una historia única de tradición y excelencia costarricense</p>
+                </div>
+                <button class="close-overlay-btn" id="close-menu-overlay" aria-label="Cerrar menú">
+                    <span>×</span>
+                </button>
+            </div>
+            
+            <div class="coffee-menu-grid">
+                <article class="coffee-card premium">
+                    <div class="card-header">
+                        <div class="coffee-visual">
+                            <div class="coffee-steam">
+                                <div class="steam"></div>
+                                <div class="steam"></div>
+                                <div class="steam"></div>
+                            </div>
+                            <div class="coffee-icon">☕</div>
+                            <div class="specialty-indicator">
+                                <span class="premium-badge">Premium</span>
+                            </div>
+                        </div>
+                        <div class="coffee-name">
+                            <h3>Café Grano Dorado</h3>
+                            <p class="origin-info">Origen Premium Tarrazú</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="intensity-meter">
+                            <span class="intensity-label">Intensidad</span>
+                            <div class="intensity-bar">
+                                <div class="intensity-fill" style="width: 70%;"></div>
+                            </div>
+                            <span class="intensity-value">3.5/5</span>
+                        </div>
+                        
+                        <div class="tasting-notes">
+                            <h4>Perfil de Sabor</h4>
+                            <div class="notes-tags">
+                                <span class="note chocolate">Chocolate</span>
+                                <span class="note caramel">Cítricos</span>
+                                <span class="note smooth">Caramelo</span>
+                            </div>
+                        </div>
+                        
+                        <p class="description">Nuestro café insignia, cultivado en las montañas volcánicas de Tarrazú. Granos Arábica seleccionados a mano, tostado artesanal que revela notas de chocolate oscuro y frutas cítricas.</p>
+                        
+                        <div class="coffee-highlights">
+                            <div class="highlight">
+                                <span class="highlight-icon">🏔️</span>
+                                <span>Montañas de Tarrazú</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">👋</span>
+                                <span>Selección Manual</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">🔥</span>
+                                <span>Tostado Artesanal</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="size-selector">
+                            <label class="size-label">Tamaño:</label>
+                            <div class="size-buttons">
+                                <button class="size-option active" data-price="2500" data-size="Regular">8oz</button>
+                                <button class="size-option" data-price="3000" data-size="Grande">12oz</button>
+                            </div>
+                            <div class="price-display">
+                                <span class="current-price">₡2,500</span>
+                                <span class="price-label">Taza Regular</span>
+                            </div>
+                        </div>
+                        <button class="order-btn premium" 
+                                onclick="window.open('https://wa.me/50687104694?text=Hola, me gustaría ordenar un Café Grano Dorado', '_blank')">
+                            <span class="btn-text">Ordenar</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </article>
+                
+                <article class="coffee-card premium">
+                    <div class="card-header">
+                        <div class="coffee-visual">
+                            <div class="coffee-steam">
+                                <div class="steam"></div>
+                                <div class="steam"></div>
+                                <div class="steam"></div>
+                            </div>
+                            <div class="coffee-icon">🍫</div>
+                            <div class="specialty-indicator">
+                                <span class="premium-badge">Premium</span>
+                            </div>
+                        </div>
+                        <div class="coffee-name">
+                            <h3>Café con Chocolate</h3>
+                            <p class="origin-info">Fusión Premium Artesanal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="intensity-meter">
+                            <span class="intensity-label">Intensidad</span>
+                            <div class="intensity-bar">
+                                <div class="intensity-fill" style="width: 75%;"></div>
+                            </div>
+                            <span class="intensity-value">4/5</span>
+                        </div>
+                        
+                        <div class="tasting-notes">
+                            <h4>Perfil de Sabor</h4>
+                            <div class="notes-tags">
+                                <span class="note chocolate">Chocolate</span>
+                                <span class="note smooth">Suave</span>
+                                <span class="note sweet">Dulce</span>
+                            </div>
+                        </div>
+                        
+                        <p class="description">La combinación perfecta entre nuestro café premium y chocolate artesanal costarricense. Una experiencia indulgente que equilibra la intensidad del café con la dulzura del cacao.</p>
+                        
+                        <div class="coffee-highlights">
+                            <div class="highlight">
+                                <span class="highlight-icon">🏆</span>
+                                <span>Chocolate Artesanal</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">⚖️</span>
+                                <span>Dulzura Balanceada</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">✨</span>
+                                <span>Experiencia Única</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="size-selector">
+                            <label class="size-label">Tamaño:</label>
+                            <div class="size-buttons">
+                                <button class="size-option active" data-price="3200" data-size="Regular">8oz</button>
+                                <button class="size-option" data-price="3800" data-size="Grande">12oz</button>
+                            </div>
+                            <div class="price-display">
+                                <span class="current-price">₡3,200</span>
+                                <span class="price-label">Taza Regular</span>
+                            </div>
+                        </div>
+                        <button class="order-btn premium" 
+                                onclick="window.open('https://wa.me/50687104694?text=Hola, me gustaría ordenar un Café con Chocolate', '_blank')">
+                            <span class="btn-text">Ordenar</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-container">
@@ -59,22 +232,20 @@
                 </div>
                 
                 <div class="hero-main-buttons">
-                    <a href="#menu" class="btn-main ver-carta">
-                        <span class="btn-icon">📋</span>
+                    <button class="btn-main ver-carta" id="hero-menu-toggle">
                         <span class="btn-text">Ver Carta</span>
-                    </a>
+                    </button>
                     <a href="https://wa.me/50687104694?text=Hola, me gustaría hacer un pedido" class="btn-main hacer-pedido" target="_blank">
-                        <span class="btn-icon">📱</span>
                         <span class="btn-text">Hacer Pedido</span>
                     </a>
                 </div>
                 
                 <div class="hero-secondary-actions">
                     <a href="ubicacion.html" class="btn-secondary">
-                        <span>📍 Visítanos</span>
+                        <span>Visítanos</span>
                     </a>
                     <a href="quienes somos.html" class="btn-secondary">
-                        <span>👥 Conócenos</span>
+                        <span>Conócenos</span>
                     </a>
                 </div>
             </div>
@@ -97,7 +268,7 @@
                 </div>
                 <div class="preview-stats">
                     <div class="stat-item">
-                        <span class="stat-number">40+</span>
+                        <span class="stat-number">3</span>
                         <span class="stat-label">Años de experiencia</span>
                     </div>
                     <div class="stat-item">
@@ -113,98 +284,13 @@
         </div>
     </section>
 
-    <!-- Menu Section - Tipos de Café -->
-    <section class="menu-section">
-        <div class="container">
-            <div class="menu-header">
-                <h2>Nuestras Especialidades</h2>
-                <p>Dos opciones perfectas para cada momento del día</p>
-            </div>
-            <div class="coffee-menu" id="menu">
-                <div class="coffee-item enhanced">
-                    <div class="coffee-image">
-                        <div class="coffee-photo">
-                            <div class="coffee-icon">☕</div>
-                            <div class="photo-overlay">
-                                <span class="popular-badge">Más Popular</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coffee-details">
-                        <div class="coffee-header">
-                            <h3>Café Grano Dorado</h3>
-                            <div class="price-tag">
-                                <span class="price">₡2,500</span>
-                                <span class="size">Taza Regular</span>
-                            </div>
-                        </div>
-                        <p>Nuestro café premium 100% costarricense. Granos seleccionados de las mejores fincas, tostado artesanal que resalta las notas frutales y el equilibrio perfecto entre acidez y cuerpo.</p>
-                        <div class="coffee-features">
-                            <span class="feature">• Origen único</span>
-                            <span class="feature">• Tostado medio</span>
-                            <span class="feature">• Notas frutales</span>
-                        </div>
-                        <div class="coffee-actions">
-                            <div class="size-options">
-                                <button class="size-btn active" data-price="2500">Regular</button>
-                                <button class="size-btn" data-price="3000">Grande</button>
-                            </div>
-                            <a href="https://wa.me/50687104694?text=Hola, me gustaría ordenar un Café Grano Dorado" 
-                               class="btn-order" target="_blank">
-                                <span>Ordenar Ahora</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="coffee-item enhanced">
-                    <div class="coffee-image">
-                        <div class="coffee-photo">
-                            <div class="coffee-icon">🍫</div>
-                            <div class="photo-overlay">
-                                <span class="specialty-badge">Especialidad</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coffee-details">
-                        <div class="coffee-header">
-                            <h3>Café con Chocolate</h3>
-                            <div class="price-tag">
-                                <span class="price">₡3,200</span>
-                                <span class="size">Taza Regular</span>
-                            </div>
-                        </div>
-                        <p>La combinación perfecta entre nuestro café premium y chocolate artesanal costarricense. Una experiencia indulgente que equilibra la intensidad del café con la dulzura del cacao.</p>
-                        <div class="coffee-features">
-                            <span class="feature">• Chocolate artesanal</span>
-                            <span class="feature">• Dulzura balanceada</span>
-                            <span class="feature">• Experiencia única</span>
-                        </div>
-                        <div class="coffee-actions">
-                            <div class="size-options">
-                                <button class="size-btn active" data-price="3200">Regular</button>
-                                <button class="size-btn" data-price="3800">Grande</button>
-                            </div>
-                            <a href="https://wa.me/50687104694?text=Hola, me gustaría ordenar un Café con Chocolate" 
-                               class="btn-order" target="_blank">
-                                <span>Ordenar Ahora</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Coffee Background Section -->
     <section class="coffee-background-section">
         <div class="section-overlay"></div>
-        <div class="container">
-            <div class="background-content">
-                <h2>Tradición que perdura</h2>
-                <p>Tres generaciones dedicadas al arte del café. Desde nuestros humildes inicios en 1985 hasta convertirnos en referente del café gourmet costarricense.</p>
-                <a href="historia.html" class="btn-hero secondary">Nuestra historia</a>
-            </div>
+        <div class="background-content">
+            <h2>Tradición que perdura</h2>
+            <p>Tres generaciones dedicadas al arte del café. Desde nuestros humildes inicios en 1985 hasta convertirnos en referente del café gourmet costarricense.</p>
+            <a href="historia.html" class="btn-hero secondary">Nuestra historia</a>
         </div>
     </section>
 
@@ -367,41 +453,180 @@
                 }
             });
             
-            // Smooth scroll para "Ver Carta"
-            document.querySelectorAll('a[href="#menu"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const menuSection = document.getElementById('menu');
-                    if (menuSection) {
-                        const headerHeight = header.offsetHeight;
-                        const targetPosition = menuSection.offsetTop - headerHeight - 20;
+            // Sistema de overlay del menú
+            const headerMenuToggle = document.getElementById('header-menu-toggle');
+            const heroMenuToggle = document.getElementById('hero-menu-toggle');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const closeMenuBtn = document.getElementById('close-menu-overlay');
+            const overlayBackdrop = document.querySelector('.overlay-backdrop');
+            
+            function openMenuOverlay() {
+                if (menuOverlay) {
+                    menuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Inicializar funcionalidad de las tarjetas cuando se abre el overlay
+                    initializeOverlayCoffeeCards();
+                    
+                    // Animación de entrada para las tarjetas
+                    const coffeeCards = menuOverlay.querySelectorAll('.coffee-card');
+                    coffeeCards.forEach((card, index) => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(30px)';
                         
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 200 + (index * 100));
+                    });
+                }
+            }
+            
+            function closeMenuOverlay() {
+                if (menuOverlay) {
+                    menuOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Resetear animaciones de las tarjetas
+                    const coffeeCards = menuOverlay.querySelectorAll('.coffee-card');
+                    coffeeCards.forEach(card => {
+                        card.style.transition = '';
+                    });
+                }
+            }
+            
+            // Event listeners para abrir el overlay
+            if (headerMenuToggle) {
+                headerMenuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openMenuOverlay();
+                });
+            }
+            
+            if (heroMenuToggle) {
+                heroMenuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openMenuOverlay();
+                });
+            }
+            
+            // Event listeners para cerrar el overlay
+            if (closeMenuBtn) {
+                closeMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    closeMenuOverlay();
+                });
+            }
+            
+            if (overlayBackdrop) {
+                overlayBackdrop.addEventListener('click', function(e) {
+                    if (e.target === overlayBackdrop) {
+                        closeMenuOverlay();
                     }
                 });
+            }
+            
+            // Cerrar con tecla ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && menuOverlay && menuOverlay.classList.contains('active')) {
+                    closeMenuOverlay();
+                }
             });
             
-            // Animación de botones de tamaño de café
-            document.querySelectorAll('.size-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remover active de otros botones en el mismo grupo
-                    const parent = this.closest('.coffee-item');
-                    parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-                    
-                    // Activar este botón
-                    this.classList.add('active');
-                    
-                    // Actualizar precio
-                    const price = this.dataset.price;
-                    const priceElement = parent.querySelector('.price');
-                    if (priceElement && price) {
-                        priceElement.textContent = `₡${price}`;
-                    }
+            // Funcionalidad específica para las tarjetas del overlay
+            function initializeOverlayCoffeeCards() {
+                // Solo buscar dentro del overlay
+                menuOverlay.querySelectorAll('.size-option').forEach(btn => {
+                    // Remover listeners existentes para evitar duplicados
+                    btn.replaceWith(btn.cloneNode(true));
                 });
-            });
+                
+                // Agregar nuevos listeners
+                menuOverlay.querySelectorAll('.size-option').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Remover active de otros botones en el mismo grupo
+                        const parent = this.closest('.coffee-card');
+                        if (parent) {
+                            parent.querySelectorAll('.size-option').forEach(b => {
+                                b.classList.remove('active');
+                            });
+                            
+                            // Activar este botón
+                            this.classList.add('active');
+                            
+                            // Actualizar precio y etiqueta
+                            const price = this.dataset.price;
+                            const size = this.dataset.size;
+                            const priceElement = parent.querySelector('.current-price');
+                            const labelElement = parent.querySelector('.price-label');
+                            
+                            if (priceElement && price) {
+                                // Formatear precio con separador de miles
+                                const formattedPrice = new Intl.NumberFormat('es-CR', {
+                                    style: 'currency',
+                                    currency: 'CRC',
+                                    minimumFractionDigits: 0,
+                                    maximumFractionDigits: 0
+                                }).format(price).replace('CRC', '₡');
+                                
+                                priceElement.textContent = formattedPrice;
+                            }
+                            
+                            if (labelElement && size) {
+                                labelElement.textContent = `Taza ${size}`;
+                            }
+                            
+                            // Animación de cambio de precio
+                            if (priceElement) {
+                                priceElement.style.transform = 'scale(1.1)';
+                                setTimeout(() => {
+                                    priceElement.style.transform = 'scale(1)';
+                                }, 200);
+                            }
+                        }
+                    });
+                });
+                
+                // Animación de las barras de intensidad dentro del overlay
+                menuOverlay.querySelectorAll('.intensity-fill').forEach(bar => {
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const width = entry.target.style.width;
+                                entry.target.style.width = '0%';
+                                setTimeout(() => {
+                                    entry.target.style.width = width;
+                                }, 100);
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+                    observer.observe(bar);
+                });
+                
+                // Efecto hover para las notas de sabor dentro del overlay
+                menuOverlay.querySelectorAll('.note').forEach(note => {
+                    note.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.05) translateY(-2px)';
+                    });
+                    
+                    note.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1) translateY(0)';
+                    });
+                });
+            }
+
+            // Función de inicialización (solo para compatibilidad)
+            function initializeCoffeeCards() {
+                // Las tarjetas ahora están en el overlay y se inicializan cuando se abre
+                console.log('Sistema de menú overlay inicializado');
+            }
+            
+            // Inicializar al cargar la página
+            initializeCoffeeCards();
         });
     </script>
     
